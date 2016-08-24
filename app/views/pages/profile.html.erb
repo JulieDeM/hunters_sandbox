@@ -1,0 +1,54 @@
+<% @title = "Profile" %>
+ Welcome  <%= current_user.email%>
+<!-- the one above uses the controller pages -->
+
+<h3>You are on the profile</h3>
+<h3><%=current_user.email %> </h3>
+<!--
+<%= form_for :profile do |f| %>
+  <p>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %><br>
+    <%= f.text_area :last_name %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %> -->
+
+
+
+<%= form_for(:users, html: {multipart: true, class: 'form-horizontal' }) do |f| %>
+
+
+  <div class="form-inputs">
+
+
+    <%= f.form_group :first_name do |f| %>
+        <%= f.label :first_name, class: 'form-label col-md-2' %>
+        <div class='col-md-8'>
+          <%= f.text_field :first_name, class: 'form-control' %>
+        </div>
+    <% end %>
+
+    <%= f.form_group :last_name do |f| %>
+      <%= f.label :last_name, class: 'form-label col-md-2' %>
+      <div class='col-md-8'>
+        <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
+    <% end %>
+
+  </div>
+
+  <div class="form-actions col-md-offset-3 col-md-9">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to "Cancel", profile_path, class: 'btn' %>
+  </div>
+
+
+<% end %>

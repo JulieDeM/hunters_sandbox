@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.unclaimed
+    # scope :active, where(:active => true)
+
   end
 
   def feed

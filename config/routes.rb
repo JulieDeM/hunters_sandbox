@@ -14,10 +14,12 @@ Rails.application.routes.draw do
   root :to => "pages#index"
 
   get 'pages' => 'pages#index'
+  get 'profile' => 'pages#profile'
+  post 'profile' => 'pages#profile'
 
   get 'hunt' => 'users#hunt'
   get 'sell' => 'users#sell'
-  get 'feed' => 'users#feed'
+  get 'feed' => 'products#index'
 
   get 'cart' => 'carts#show'
   get 'wishlist' => 'wishlist#index'

@@ -26,7 +26,10 @@
           <td><%= link_to (image_tag product.avatar.url(:thumb), style:"height:50px"),product %></td>
           <td><%= product.name %></td>
           <td><%= product.price %></td>
+          <!-- <td><% if product.active? %></td> -->
           <td><%= product.active %></td>
+          <!-- <td><% end %></td> -->
+
           <td class="actions">
             <%= link_to icon_tag("eye"), product, rel: 'tooltip', title: 'Show' %>
             <% if product.hosted_by?(current_user) %>
@@ -44,4 +47,3 @@
     </table>
   </div><!-- /.sheet-inner -->
 </div><!-- /.sheet -->
-
